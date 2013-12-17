@@ -12,6 +12,8 @@ module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
  
+  var appcache_files = ['./*.html'];
+  
   grunt.initConfig({
     watch: {
       options: {
@@ -47,13 +49,19 @@ module.exports = function (grunt) {
         path: 'http://localhost:<%%= connect.options.port %>'
       }
     },
+    bower: {
+      target: {
+        rjsConfig: 'requirejs-config.js'
+      }
+    },
     manifest: {
+      //http://frederiknakstad.com/awkward-change-flow-or-how-i-learned-to-stop-worrying-and-love-the-application-cache/
       generate: {
         options: {
           network: ['http://*', 'https://*'],
           timestamp: true
         },
-        src: ['./*.html'],
+        src: appcache_files,
         dest: 'manifest.appcache'
       }
     }
