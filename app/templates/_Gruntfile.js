@@ -72,4 +72,22 @@ module.exports = function (grunt) {
   grunt.registerTask('build', 'Build your app.', function () {
     console.log("Implement your custom build step here");
   });
+  
+  grunt.registerTask('cdnify', 'Toggle scripts/css to work online or offline', function(){
+    var fs = require("fs");
+
+    var filePath = "index.html"; //process.argv[2];
+    var filePathNew = filePath; //+".bak";
+
+    function cdnify(contents){
+      //quick-n-dirty version, requires src|href to be adjacent to data-alt-path in markup
+      return contents.replace( /(src|href)="([^"]+)"([\s]+)data-alt-path="([^"]+)"/gm, '$1="$4"$3data-alt-path="$2"' )
+    }
+
+    var contents = fs.readFileSync(filePath, 'utf-8');
+    var newContents = cdnify(contents);
+    fs.writeFileSync(filePathNew, newContents);
+
+    grunt.log.writeln("All set, check " + filePathNew);
+  });  
 }
