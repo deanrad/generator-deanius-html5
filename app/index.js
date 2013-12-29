@@ -39,14 +39,16 @@ Deanhtml5Generator.prototype.askFor = function askFor() {
 };
 
 Deanhtml5Generator.prototype.app = function app() {
-  this.mkdir('app');
+  this.mkdir('css');
+  this.mkdir('js');
 
   this.copy('_Gruntfile.js', 'Gruntfile.js');
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
   this.copy('_index.html', 'index.html')
-  this.copy('_requirejs-config.js', 'requirejs-config.js');
+  this.copy('_requirejs-config.js', 'js/requirejs-config.js');
   this.copy('_README.md', 'README.md');
+  this.copy('_main.css', 'css/main.css');
   
 };
 

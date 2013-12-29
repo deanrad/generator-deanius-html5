@@ -51,7 +51,7 @@ module.exports = function (grunt) {
     },
     bower: {
       target: {
-        rjsConfig: 'requirejs-config.js'
+        rjsConfig: 'js/requirejs-config.js'
       }
     },
     manifest: {
