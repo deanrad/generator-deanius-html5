@@ -10,15 +10,14 @@ requirejs.config({
     /* COFFEE */
   },
   shim: {
-    "bootstrap": {
-      deps: ["jquery"]
-    }
+    "bootstrap": ["jquery"]
   },
   map: {
   "*": {
     "css": "require-css/css",
     "cs": "require-cs/cs", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-cs/0.4.2/cs.js"*/
-    "coffee-script": "coffee-script/index" /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"*/
+    "coffee-script": "coffee-script/index", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"*/
+    "domReady": "requirejs-domready/domReady" /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"*/
   }
 }
 });
@@ -26,3 +25,7 @@ requirejs.config({
 var deps=["jquery", "bootstrap", "css!bootstrap-css", "css!main-css"];
 console.log("Loading up " + deps.join(","))
 requirejs(deps)
+
+require(["domReady!"], function(){
+  console.log("The dom will see you now")
+})
