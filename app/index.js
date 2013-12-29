@@ -49,6 +49,7 @@ Deanhtml5Generator.prototype.app = function app() {
   this.copy('_requirejs-config.js', 'js/requirejs-config.js');
   this.copy('_README.md', 'README.md');
   this.copy('_main.css', 'css/main.css');
+  this.copy('_util.coffee', 'js/util.coffee');
   
 };
 

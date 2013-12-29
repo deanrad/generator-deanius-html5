@@ -49,11 +49,6 @@ module.exports = function (grunt) {
         path: 'http://localhost:<%%= connect.options.port %>'
       }
     },
-    bower: {
-      target: {
-        rjsConfig: 'js/requirejs-config.js'
-      }
-    },
     manifest: {
       //http://frederiknakstad.com/awkward-change-flow-or-how-i-learned-to-stop-worrying-and-love-the-application-cache/
       generate: {
@@ -76,12 +71,16 @@ module.exports = function (grunt) {
   grunt.registerTask('cdnify', 'Toggle scripts/css to work online or offline', function(){
     var fs = require("fs");
 
-    var filePath = "index.html"; //process.argv[2];
-    var filePathNew = filePath; //+".bak";
+    var filePath = "index.html";
+    var filePathNew = filePath;
 
     function cdnify(contents){
       //quick-n-dirty version, requires src|href to be adjacent to data-alt-path in markup
       return contents.replace( /(src|href)="([^"]+)"([\s]+)data-alt-path="([^"]+)"/gm, '$1="$4"$3data-alt-path="$2"' )
+    }
+    function cdnifyRequire(contents){
+      //for paths in requirejs such as 'jquery/jquery.min', /*data-alt-path="//code.jquery.com/jquery-1.10.2.min.js"*/
+      return contents.replace( /:\s?"(.*?)"(,?) \/\*data-alt-path="(.*)"/gm, ': "$3"$2 /*data-alt-path="$1"' )
     }
 
     var contents = fs.readFileSync(filePath, 'utf-8');
@@ -89,5 +88,12 @@ module.exports = function (grunt) {
     fs.writeFileSync(filePathNew, newContents);
 
     grunt.log.writeln("All set, check " + filePathNew);
+
+    contents = fs.readFileSync("js/requirejs-config.js", 'utf-8');
+    newContents = cdnifyRequire(contents);
+    fs.writeFileSync("js/requirejs-config.js", newContents);
+
+    grunt.log.writeln("All set, check js/requirejs-config.js");
+
   });  
 }
