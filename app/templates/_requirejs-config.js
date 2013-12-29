@@ -23,9 +23,9 @@ requirejs.config({
 });
 
 var deps=["jquery", "bootstrap", "css!bootstrap-css", "css!main-css"];
-console.log("Loading up " + deps.join(","))
-requirejs(deps)
+console.log("Loading up " + deps.join(","));
+requirejs(deps);
 
 require(["domReady!"], function(){
-  console.log("The dom will see you now")
-})
+  console.log("The dom will see you now");
+});

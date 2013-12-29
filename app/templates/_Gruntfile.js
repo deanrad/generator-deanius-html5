@@ -15,6 +15,22 @@ module.exports = function (grunt) {
   var appcache_files = ['./*.html'];
   
   grunt.initConfig({
+    jshint: {
+      files: ['js/*.js'],
+      options: {
+        undef: true,
+        devel: true,
+        trailing: true,
+        lastsemic: false,
+        globals: {
+          module: true,
+          console: true,
+          define: true,
+          require: true,
+          requirejs: true
+        }
+      }
+    },
     watch: {
       options: {
         nospawn: true,
@@ -76,11 +92,11 @@ module.exports = function (grunt) {
 
     function cdnify(contents){
       //quick-n-dirty version, requires src|href to be adjacent to data-alt-path in markup
-      return contents.replace( /(src|href)="([^"]+)"([\s]+)data-alt-path="([^"]+)"/gm, '$1="$4"$3data-alt-path="$2"' )
+      return contents.replace( /(src|href)="([^"]+)"([\s]+)data-alt-path="([^"]+)"/gm, '$1="$4"$3data-alt-path="$2"' );
     }
     function cdnifyRequire(contents){
       //for paths in requirejs such as 'jquery/jquery.min', /*data-alt-path="//code.jquery.com/jquery-1.10.2.min.js"*/
-      return contents.replace( /:\s?"(.*?)"(,?) \/\*data-alt-path="(.*)"/gm, ': "$3"$2 /*data-alt-path="$1"' )
+      return contents.replace( /:\s?"(.*?)"(,?) \/\*data-alt-path="(.*)"/gm, ': "$3"$2 /*data-alt-path="$1"' );
     }
 
     var contents = fs.readFileSync(filePath, 'utf-8');
@@ -95,5 +111,5 @@ module.exports = function (grunt) {
 
     grunt.log.writeln("All set, check js/requirejs-config.js");
 
-  });  
-}
+  });
+};
