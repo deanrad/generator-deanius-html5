@@ -14,7 +14,7 @@ requirejs.config({
   },
   map: {
   "*": {
-    "css": "require-css/css",
+    "css": "require-css/css", /*data-alt-path="//www.chicagogrooves.com/js/require-css.min.js"*/
     "cs": "require-cs/cs", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-cs/0.4.2/cs.js"*/
     "coffee-script": "coffee-script/index", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"*/
     "domReady": "requirejs-domready/domReady" /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"*/
