@@ -23,15 +23,15 @@ describe('deanhtml5 generator', function () {
         var expected = [
             '.jshintrc',
             '.editorconfig',
-            'app/index.html',
+            '.bowerrc',
             'Gruntfile.js',
             'package.json',
             'bower.json',
+            'README.md',
             'app/index.html',
             'app/js/requirejs-config.js',
-            'README.md',
-            'app/css/main.css',
-            'app/js/util.coffee'
+            'app/js/util.coffee',
+            'app/css/main.css'
         ];
 
         helpers.mockPrompt(this.app, {

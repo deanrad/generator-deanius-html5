@@ -47,6 +47,7 @@ Deanhtml5Generator.prototype.app = function app() {
   this.copy('_package.json', 'package.json');
   this.copy('_bower.json', 'bower.json');
   this.copy('_index.html', 'app/index.html')
+  this.copy('_.bowerrc', '.bowerrc');
   this.copy('_requirejs-config.js', 'app/js/requirejs-config.js');
   this.copy('_README.md', 'README.md');
   this.copy('_main.css', 'app/css/main.css');
