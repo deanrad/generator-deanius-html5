@@ -21,9 +21,17 @@ describe('deanhtml5 generator', function () {
 
     it('creates expected files', function (done) {
         var expected = [
-            // add files you expect to exist here.
             '.jshintrc',
-            '.editorconfig'
+            '.editorconfig',
+            'app/index.html',
+            'Gruntfile.js',
+            'package.json',
+            'bower.json',
+            'app/index.html',
+            'app/js/requirejs-config.js',
+            'README.md',
+            'app/css/main.css',
+            'app/js/util.coffee'
         ];
 
         helpers.mockPrompt(this.app, {
