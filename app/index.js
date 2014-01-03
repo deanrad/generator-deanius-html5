@@ -43,19 +43,21 @@ Deanhtml5Generator.prototype.app = function app() {
   this.mkdir('app/css');
   this.mkdir('app/js');
 
-  this.copy('_Gruntfile.js', 'Gruntfile.js');
-  this.copy('_package.json', 'package.json');
-  this.copy('_bower.json', 'bower.json');
-  this.copy('_index.html', 'app/index.html')
-  this.copy('_.bowerrc', '.bowerrc');
-  this.copy('_requirejs-config.js', 'app/js/requirejs-config.js');
-  this.copy('_README.md', 'README.md');
-  this.copy('_main.css', 'app/css/main.css');
-  this.copy('_util.coffee', 'app/js/util.coffee');
+  this.copy('app/_index.html', 'app/index.html');
+  this.copy('app/_test-runner.js', 'app/test-runner.js');
+  this.copy('app/_test-runner.html', 'app/test-runner.html');
+  this.copy('app/js/_requirejs-config.js', 'app/js/requirejs-config.js');
+  this.copy('app/js/_util.coffee', 'app/js/util.coffee');
+  this.copy('app/css/_main.css', 'app/css/main.css');
 
 };
 
 Deanhtml5Generator.prototype.projectfiles = function projectfiles() {
-  this.copy('editorconfig', '.editorconfig');
-  this.copy('jshintrc', '.jshintrc');
+  this.copy('_.bowerrc', '.bowerrc');
+  this.copy('_.editorconfig', '.editorconfig');
+  this.copy('_.jshintrc', '.jshintrc');
+  this.copy('_bower.json', 'bower.json');
+  this.copy('_package.json', 'package.json');
+  this.copy('_Gruntfile.js', 'Gruntfile.js');
+  this.copy('_README.md', 'README.md');
 };

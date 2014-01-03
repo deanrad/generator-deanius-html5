@@ -22,7 +22,7 @@ requirejs.config({
 }
 });
 
-var deps=["jquery", "bootstrap", "css!bootstrap-css", "css!main-css"];
+var deps=["jquery", "bootstrap", "css!bootstrap-css", "css!main-css", "cs!/js/util"];
 console.log("Loading up " + deps.join(","));
 requirejs(deps);
 
