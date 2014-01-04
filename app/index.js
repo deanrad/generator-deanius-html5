@@ -46,8 +46,11 @@ Deanhtml5Generator.prototype.app = function app() {
   this.copy('app/_index.html', 'app/index.html');
   this.copy('app/_test-runner.js', 'app/test-runner.js');
   this.copy('app/_test-runner.html', 'app/test-runner.html');
+  this.copy('app/js/_main.js', 'app/js/main.js');
   this.copy('app/js/_requirejs-config.js', 'app/js/requirejs-config.js');
   this.copy('app/js/_util.coffee', 'app/js/util.coffee');
+  this.copy('app/js/_example.coffee', 'app/js/example.coffee');
+  this.copy('app/js/test/_example.coffee', 'app/js/test/example.coffee');
   this.copy('app/css/_main.css', 'app/css/main.css');
 
 };

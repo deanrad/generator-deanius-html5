@@ -29,8 +29,14 @@ describe('deanhtml5 generator', function () {
             'bower.json',
             'README.md',
             'app/index.html',
+            'app/test-runner.html',
+            'app/test-runner.js',
+            'app/index.html',
+            'app/js/main.js',
             'app/js/requirejs-config.js',
             'app/js/util.coffee',
+            'app/js/example.coffee',
+            'app/js/test/example.coffee',
             'app/css/main.css'
         ];
 

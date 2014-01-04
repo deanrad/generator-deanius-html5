@@ -6,10 +6,11 @@
         <meta name="description" content="<%= title %>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><%= title %></title>
-        <script data-main="js/requirejs-config" 
+        <script src="/js/requirejs-config.js"></script>
+        <script data-main="js/main" 
           src="bower_components/requirejs/require.js"
           data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js"></script>
-        <!-- To prevent FOUC, uncomment the following, and no need to load css from requirejs -->
+        <!-- To prevent FOUC, uncomment to statically link the stylesheets -->
         <!--link rel="stylesheet" 
           href="bower_components/bootstrap/dist/css/bootstrap.css"
           data-alt-path="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"-->
