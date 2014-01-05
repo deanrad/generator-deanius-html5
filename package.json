@@ -1,6 +1,6 @@
 {
   "name": "generator-deanhtml5",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A generator for Yeoman",
   "keywords": [
     "yeoman-generator"
@@ -18,12 +18,13 @@
     "url": "git://github.com/chicagogrooves/generator-deanhtml5.git"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -R spec"
   },
   "dependencies": {
     "yeoman-generator": "~0.14.0"
   },
   "devDependencies": {
+    "grunt": "~0.4.2",
     "mocha": "~1.16.2",
     "q": "~0.9.7"
   },
