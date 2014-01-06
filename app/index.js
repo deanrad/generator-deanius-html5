@@ -59,6 +59,7 @@ Deanhtml5Generator.prototype.projectfiles = function projectfiles() {
   this.copy('_.bowerrc', '.bowerrc');
   this.copy('_.editorconfig', '.editorconfig');
   this.copy('_.jshintrc', '.jshintrc');
+  this.copy('_app.build.js', 'app.build.js');
   this.copy('_bower.json', 'bower.json');
   this.copy('_package.json', 'package.json');
   this.copy('_Gruntfile.js', 'Gruntfile.js');

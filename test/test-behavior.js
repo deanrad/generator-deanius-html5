@@ -58,6 +58,14 @@ describe('app behavior upon install', function () {
 			//But not this since 'this' is incorrect, giving Cannot read property 'app' of undefined
 			//assertTest(test, done);
 		});
+
+		
+		it('installs an r.js build file which installs into app-optimized/', function(done) {
+			assertTest.bind(this)(function(){
+				helpers.assertFile("app.build.js", /app-optimized/);
+			}, done);
+		});
+
 		
 		function assertTest(test, done){
       helpers.mockPrompt(this.app, {

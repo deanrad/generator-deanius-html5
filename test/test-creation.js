@@ -28,6 +28,7 @@ describe('deanhtml5 generator', function () {
             'package.json',
             'bower.json',
             'README.md',
+            'app.build.js',
             'app/index.html',
             'app/test-runner.html',
             'app/test-runner.js',

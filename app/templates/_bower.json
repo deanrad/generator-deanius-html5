@@ -10,6 +10,7 @@
     "requirejs": "~2.1.9",
     "require-cs": "~0.4.4",
     "require-css": "~0.1.1",
+    "requirejs-plugins": "~1.0.2",
     "require-handlebars-plugin": "~0.7.0",
     "requirejs-domready": "~2.0.1",
     "requirejs-text": "~2.0.10"
