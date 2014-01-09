@@ -1,5 +1,5 @@
 {
-  "name": "<%= title %>",
+  "name": "<%= title.toLowerCase().replace(/ /g,'-') %>",
   "version": "0.0.1",
   "dependencies": {
     "bootstrap": "3.0.3",

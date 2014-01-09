@@ -1,3 +1,5 @@
+// to cache bust use  urlArgs: "bust=" + (new Date()).getTime(),
+
 var require={
   baseUrl: ".",
   paths: {
@@ -9,7 +11,7 @@ var require={
     "bootstrap": "bower_components/bootstrap/dist/js/bootstrap.min", /*data-alt-path="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min"*/
     "lodash": "bower_components/lodash/dist/lodash.min", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"*/
     "css": "bower_components/require-css/css", /*data-alt-path="//www.chicagogrooves.com/js/require-css.min.js"*/
-    "cs": "bower_components/require-cs/cs", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-cs/0.4.2/cs.js"*/
+    "coffee": "bower_components/require-cs/cs", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-cs/0.4.2/cs.js"*/
     "coffee-script": "bower_components/coffee-script/index", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"*/
     "domReady": "bower_components/requirejs-domready/domReady", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"*/
     "hbs": "bower_components/require-handlebars-plugin/hbs" /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/requirejs-handlebars/0.0.2/hbars.min.js"*/
@@ -19,11 +21,6 @@ var require={
   },
   map: {
     "*": {
-      "css": "bower_components/require-css/css", /*data-alt-path="//www.chicagogrooves.com/js/require-css.min.js"*/
-      "cs": "bower_components/require-cs/cs", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-cs/0.4.2/cs.js"*/
-      "coffee-script": "bower_components/coffee-script/index", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"*/
-      "domReady": "bower_components/requirejs-domready/domReady", /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.js"*/
-      "hbs": "bower_components/require-handlebars-plugin/hbs" /*data-alt-path="//cdnjs.cloudflare.com/ajax/libs/requirejs-handlebars/0.0.2/hbars.min.js"*/
     }
   }
 };
