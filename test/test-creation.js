@@ -37,6 +37,7 @@ describe('deanhtml5 generator', function () {
             'app/js/requirejs-config.js',
             'app/js/util.coffee',
             'app/js/example.coffee',
+            'app/js/templates/example.coffee',
             'app/js/test/example.coffee',
             'app/css/main.css'
         ];

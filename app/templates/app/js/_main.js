@@ -1,8 +1,11 @@
-var deps=["jquery", "lodash", "bootstrap", "css!bootstrap-css", "css!main-css"];
+var deps=["jquery", "underscore", "underscore.string", "coffee-script", "reactive-coffee", "bootstrap", "css!bootstrap-css", "css!/css/main"];
 console.log("Loading up " + deps.join(","));
-requirejs(deps);
+requirejs(deps, function(){
+  rxt.importTags()
+  //_.mixin(_.str.exports())
+});
 
-require(["domReady!", "jquery", "lodash", "coffee!js/util"], function(doc, $, _){
+require(["domReady!", "jquery", "coffee!templates/example"], function(doc, $, tmpl){
   console.log("The dom will see you now");
-  console.log("Lodash version " + _.VERSION);
+  $("h2").html( tmpl({title: "<%= title %>"}) )
 });
