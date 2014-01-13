@@ -39,7 +39,9 @@ module.exports = function (grunt) {
       },
       livereload: {
         files: [
-          'index.html'
+          'app/index.html',
+          'app/js/**/*.coffee',
+          'app/js/**/*.js'
         ],
         tasks: ['build']
       }
