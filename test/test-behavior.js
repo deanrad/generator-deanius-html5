@@ -45,19 +45,22 @@ describe('app behavior upon install', function () {
       });
 		});
 		
-		it('can run "npm test"', function(done) {
+		it('can run "npm test" to run test suite in node', function(done) {
 			//var suite = this;
 			var test = function(){
 				helpers.assertFile("package.json", /scripts/);
 			};
 			
-			//This works
 			assertTest.bind(this)(test, done);
-			//As does this
-			//assertTest.call(this, test, done);
-			//But not this since 'this' is incorrect, giving Cannot read property 'app' of undefined
-			//assertTest(test, done);
 		});
+		it('can run "http://localhost:8080/test-runner.html to run test suite"', function() {});
+
+		it('can run "grunt --help"', function() {});
+		it('can run "grunt appcache" to create appcache', function() {});
+		it('can work with live-reload to compile coffeescript, LESS files', function() {});
+		/* TODO */
+		it('can work with grunt to compile coffeescript files', function() {});
+		it('can work with grunt to compile LESS files', function() {});
 
 		
 		it('installs an r.js build file which installs into app-optimized/', function(done) {
@@ -66,6 +69,7 @@ describe('app behavior upon install', function () {
 			}, done);
 		});
 
+    
 		
 		function assertTest(test, done){
       helpers.mockPrompt(this.app, {
