@@ -57,6 +57,7 @@ Deanhtml5Generator.prototype.app = function app() {
 };
 
 Deanhtml5Generator.prototype.projectfiles = function projectfiles() {
+  this.copy('_.gitignore', '.gitignore');
   this.copy('_.bowerrc', '.bowerrc');
   this.copy('_.editorconfig', '.editorconfig');
   this.copy('_.jshintrc', '.jshintrc');

@@ -1,7 +1,7 @@
 // to cache bust use  urlArgs: "bust=" + (new Date()).getTime(),
 
 var require={
-  baseUrl: "js",
+  baseUrl: ".",
   urlArgs: "bust=" + (new Date()).getTime(),
   paths: {
     /* CSS */
@@ -38,6 +38,10 @@ var require={
     }
   }
 };
+
+if(typeof requirejs !== "undefined"){
+  requirejs(require);
+}
 
 if(typeof exports !== "undefined"){
   exports.config = require;

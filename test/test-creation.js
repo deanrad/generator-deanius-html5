@@ -21,6 +21,7 @@ describe('deanhtml5 generator', function () {
 
     it('creates expected files', function (done) {
         var expected = [
+            '.gitignore',
             '.jshintrc',
             '.editorconfig',
             '.bowerrc',

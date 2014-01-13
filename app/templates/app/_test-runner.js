@@ -2,7 +2,7 @@
 
 /* These tests are the 'dependencies' of mocha.run() and so add yours accordingly */
 var all_tests = [
-  'cs!js/test/example'
+  'coffee!js/test/example'
 ];
 
 /* In the browser, we load the config as 'var require', then requirejs picks it up.

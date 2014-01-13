@@ -5,7 +5,7 @@ requirejs(deps, function(){
   //_.mixin(_.str.exports())
 });
 
-require(["domReady!", "jquery", "coffee!templates/example"], function(doc, $, tmpl){
+require(["domReady!", "jquery", "coffee!js/templates/example"], function(doc, $, tmpl){
   console.log("The dom will see you now");
   $("h2").html( tmpl({title: "<%= title %>"}) )
 });
