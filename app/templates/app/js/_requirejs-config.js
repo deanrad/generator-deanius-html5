@@ -1,4 +1,4 @@
-// to cache bust use  urlArgs: "bust=" + (new Date()).getTime(),
+/*globals exports:true */
 
 var require={
   baseUrl: ".",

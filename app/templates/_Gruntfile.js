@@ -1,23 +1,24 @@
 // Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
 'use strict';
 var moment = require('moment');
- 
+
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
- 
+
 module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
- 
+
   var appcache_files = ['./*.html'];
-  
+
   grunt.initConfig({
     jshint: {
-      files: ['js/*.js'],
+      files: ['Gruntfile.js', 'app/js/*.js'],
       options: {
+        node: true,
         undef: true,
         devel: true,
         trailing: true,
@@ -77,13 +78,13 @@ module.exports = function (grunt) {
       }
     }
   });
- 
+
   grunt.registerTask('server', ['build', 'connect:livereload', 'open', 'watch']);
 
   grunt.registerTask('build', 'Build your app.', function () {
     console.log("Implement your custom build step here");
   });
-  
+
   grunt.registerTask('cdnify', 'Toggle scripts/css to work online or offline', function(){
     var fs = require("fs");
 
