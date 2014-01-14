@@ -10,11 +10,9 @@ module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  var appcache_files = ['./*.html'];
-
   grunt.initConfig({
     jshint: {
-      files: ['Gruntfile.js', 'app/js/*.js'],
+      files: ['Gruntfile.js', 'app/js/**/*.js'],
       options: {
         node: true,
         undef: true,
@@ -35,9 +33,14 @@ module.exports = function (grunt) {
         nospawn: true,
         livereload: LIVERELOAD_PORT
       },
+      jshint: {
+        files: ['app/js/**/*.js'],
+        tasks: ['jshint']
+      },
       livereload: {
         files: [
-          'app/index.html',
+          'app/*.html',
+          'app/css/*.*',
           'app/js/**/*.coffee',
           'app/js/**/*.js'
         ],
@@ -73,7 +76,7 @@ module.exports = function (grunt) {
           network: ['http://*', 'https://*'],
           timestamp: true
         },
-        src: appcache_files,
+        src: ['./*.html'],
         dest: 'manifest.appcache'
       }
     }
