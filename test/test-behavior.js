@@ -1,24 +1,12 @@
 /*global describe, beforeEach, it*/
 'use strict';
 
+var assert  = require('assert');
 var Q       = require('q');
 var path    = require('path');
 var fs      = require('fs');
 var helpers = require('yeoman-generator').test;
-
-function insideApp(cb, done){
-	helpers.mockPrompt(this.app, {
-	    'someOption': true
-	});
-	this.app.options['skip-install'] = true;
-	this.app.run({}, function () {
-	    helpers.assertFile("README.md");
-	    done();
-	});
-
-	return cb();
-}
-
+var spawn = require('child_process').spawn;
 
 describe('app behavior upon install', function () {
     beforeEach(function (done) {

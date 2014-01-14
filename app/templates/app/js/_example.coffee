@@ -1,2 +1,2 @@
 define [], ->
-  coolestNumber: 41.9
+  coolestNumber: 42
