@@ -2,7 +2,6 @@
 'use strict';
 
 var assert  = require('assert');
-var Q       = require('q');
 var path    = require('path');
 var fs      = require('fs');
 var helpers = require('yeoman-generator').test;
@@ -38,7 +37,6 @@ describe('app behavior upon install', function () {
 			var test = function(){
 				helpers.assertFile("package.json", /scripts/);
 			};
-			
 			assertTest.bind(this)(test, done);
 		});
 		it('can run "http://localhost:8080/test-runner.html to run test suite"', function() {});
@@ -57,8 +55,6 @@ describe('app behavior upon install', function () {
 			}, done);
 		});
 
-    
-		
 		function assertTest(test, done){
       helpers.mockPrompt(this.app, {
           'someOption': true

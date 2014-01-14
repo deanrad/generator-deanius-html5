@@ -5,16 +5,42 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var Q    = require('q');
+var spawn = require('child_process').spawn;
 
 
 var Deanhtml5Generator = module.exports = function Deanhtml5Generator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
+  var evt = function(evtName) {
+      this.emit(evtName);
+  };
+            
   this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
+    this.installDependencies({
+      skipInstall: options['skip-install'],
+      callback: function() {
+        this.emit('dependenciesInstalled');
+      }.bind(this)
+    });
   });
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+  var pkg = this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+  
+  this.on('dependenciesInstalled', function() {
+    promiseSpawn.call(this, 'git', ['init']).then(
+      promiseSpawn.bind(this, 'git', ['add', '.'])
+    ).then(
+      promiseSpawn.bind(this, 'git', ['commit', '-m', 'First Commit. Generator ' + pkg.name + ' v' + pkg.version])
+    ).then(
+      promiseSpawn.bind(this, 'npm', ['test'], true)
+    ).then(
+      promiseSpawn.bind(this, 'echo', ['All set now. Have fun. Try "grunt server".'], true)
+    ).fail(function(err){
+      console.log("Error in dependenciesInstalled post-event. Some optional steps may not have completed: \n\t" + err);
+    });
+  });
+
 };
 
 util.inherits(Deanhtml5Generator, yeoman.generators.Base);
@@ -67,3 +93,27 @@ Deanhtml5Generator.prototype.projectfiles = function projectfiles() {
   this.copy('_Gruntfile.js', 'Gruntfile.js');
   this.copy('_README.md', 'README.md');
 };
+
+// Like I do for my fiancée :)
+function promiseSpawn(cmd, args, showOutput){
+  var d = Q.defer();
+  var ps = spawn(cmd, args);
+  
+  var output="",
+      addOutput = function(data){
+        var line = data.toString('utf8');
+        output+=line;
+        if(showOutput){ console.log(line); }
+      },
+      returnPromise = function(code){ 
+        return d.resolve({code: code, output: output});
+      };
+
+  ps.stdout.on('data', addOutput);
+  ps.stderr.on('data', addOutput);
+  ps.on('close', returnPromise)
+  
+  return d.promise;
+}
+		
+

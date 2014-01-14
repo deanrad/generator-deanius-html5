@@ -1,1 +1,4 @@
-Describe my cool project using [Markdown](http://warpedvisions.org/projects/markdown-cheat-sheet.md)
+## <%= title %>
+
+TODO Describe project in
+[Markdown](http://warpedvisions.org/projects/markdown-cheat-sheet.md)
