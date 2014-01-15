@@ -31,7 +31,7 @@ describe('app behavior upon install', function () {
           done();
       });
 		});
-		
+
 		it('can run "npm test" to run test suite in node', function(done) {
 			//var suite = this;
 			var test = function(){
@@ -48,10 +48,10 @@ describe('app behavior upon install', function () {
 		it('can work with grunt to compile coffeescript files', function() {});
 		it('can work with grunt to compile LESS files', function() {});
 
-		
-		it('installs an r.js build file which installs into app-optimized/', function(done) {
+
+		it('installs an r.js build file which optimizes into dist/', function(done) {
 			assertTest.bind(this)(function(){
-				helpers.assertFile("app.build.js", /app-optimized/);
+				helpers.assertFile("app.build.js", /dist/);
 			}, done);
 		});
 
