@@ -11,6 +11,16 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          clearRequireCache: true,
+          growl: true
+        },
+        src: ['app/test-runner.js']
+      }
+    },
     jshint: {
       files: ['Gruntfile.js', 'app/js/**/*.js'],
       options: {
@@ -44,7 +54,7 @@ module.exports = function (grunt) {
           'app/js/**/*.coffee',
           'app/js/**/*.js'
         ],
-        tasks: ['build']
+        tasks: ['build', 'mochaTest']
       }
     },
     connect: {

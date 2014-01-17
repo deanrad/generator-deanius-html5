@@ -14,7 +14,11 @@ if(typeof window === "undefined"){
   var requirejs = require('requirejs');
   var Mocha = require('mocha');
   var mocha = new Mocha;
-  
+
+  ///globals expect:true define:true it:true
+  expect = (typeof window !== "undefined" && window !== null) && (window.expect != null)
+          ? window.expect : require('chai').expect;
+
   var rconfig = require("./js/requirejs-config.js").config;
   var node_rjsconf = {
     baseUrl : __dirname,
