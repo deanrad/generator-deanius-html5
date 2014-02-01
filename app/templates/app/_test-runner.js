@@ -4,6 +4,12 @@
 var all_tests = [
   'coffee!js/test/example'
 ];
+var browser_tests = [];
+
+if(typeof window === "object"){
+  all_tests = all_tests.concat(browser_tests);
+  rxt.importTags();
+}
 
 /* In the browser, we load the config as 'var require', then requirejs picks it up.
    In node, loading is trickier, and repurposing the config that works for the browser
