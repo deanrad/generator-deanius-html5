@@ -79,6 +79,21 @@ module.exports = function (grunt) {
         path: 'http://localhost:<%%= connect.options.port %>'
       }
     },
+    requirejs: {
+      compile: {
+        options: {
+          appDir: "app",
+          dir: "dist",
+          baseUrl: ".",
+          optimize: "none",
+
+          mainConfigFile: 'app/js/requirejs-config.js',
+          modules: [{
+            name: "js/main"
+          }]
+        }
+      }
+    },
     manifest: {
       //http://frederiknakstad.com/awkward-change-flow-or-how-i-learned-to-stop-worrying-and-love-the-application-cache/
       generate: {
@@ -92,11 +107,9 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('server', ['build', 'connect:livereload', 'open', 'watch']);
+  grunt.registerTask('server', ['connect:livereload', 'open', 'watch']);
 
-  grunt.registerTask('build', 'Build your app.', function () {
-    console.log("Implement your custom build step here");
-  });
+  grunt.registerTask('build', ['requirejs']);
 
   grunt.registerTask('cdnify', 'Toggle scripts/css to work online or offline', function(){
     var fs = require("fs");
