@@ -1,12 +1,12 @@
 {
-  "name": "generator-deanhtml5",
+  "name": "generator-deanius-html5",
   "version": "0.4.1",
-  "description": "A generator for Yeoman",
+  "description": "A generator for Yeoman facilitate whipping up HTML5 apps to play with during ones commute.",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/chicagogrooves/generator-deanhtml5",
-  "bugs": "https://github.com/chicagogrooves/generator-deanhtml5/issues",
+  "homepage": "https://github.com/chicagogrooves/generator-deanius-html5",
+  "bugs": "https://github.com/chicagogrooves/generator-deanius-html5/issues",
   "author": {
     "name": "Dean Radcliffe",
     "email": "deanmisc@yahoo.com",
@@ -15,7 +15,7 @@
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/chicagogrooves/generator-deanhtml5.git"
+    "url": "git://github.com/chicagogrooves/generator-deanius-html5.git"
   },
   "scripts": {
     "test": "mocha -R spec"

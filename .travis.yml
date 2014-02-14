@@ -3,5 +3,5 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-deanhtml5' ]; then cd .. && eval "mv $currentfolder generator-deanhtml5" && cd generator-deanhtml5; fi
+  - if [ "$currentfolder" != 'generator-deanius-html5' ]; then cd .. && eval "mv $currentfolder generator-deanius-html5" && cd generator-deanius-html5; fi
 

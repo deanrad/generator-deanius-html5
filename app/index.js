@@ -9,7 +9,7 @@ var Q    = require('q');
 var spawn = require('child_process').spawn;
 
 
-var Deanhtml5Generator = module.exports = function Deanhtml5Generator(args, options, config) {
+var DeaniusHtml5Generator = module.exports = function DeaniusHtml5Generator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   var evt = function(evtName) {
@@ -43,9 +43,9 @@ var Deanhtml5Generator = module.exports = function Deanhtml5Generator(args, opti
 
 };
 
-util.inherits(Deanhtml5Generator, yeoman.generators.Base);
+util.inherits(DeaniusHtml5Generator, yeoman.generators.Base);
 
-Deanhtml5Generator.prototype.askFor = function askFor() {
+DeaniusHtml5Generator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   // have Yeoman greet the user.
@@ -64,7 +64,7 @@ Deanhtml5Generator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
-Deanhtml5Generator.prototype.app = function app() {
+DeaniusHtml5Generator.prototype.app = function app() {
   this.mkdir('app');
   this.mkdir('app/css');
   this.mkdir('app/js');
@@ -82,7 +82,7 @@ Deanhtml5Generator.prototype.app = function app() {
 
 };
 
-Deanhtml5Generator.prototype.projectfiles = function projectfiles() {
+DeaniusHtml5Generator.prototype.projectfiles = function projectfiles() {
   this.copy('_.gitignore', '.gitignore');
   this.copy('_.bowerrc', '.bowerrc');
   this.copy('_.editorconfig', '.editorconfig');

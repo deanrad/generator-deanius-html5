@@ -1,4 +1,4 @@
-# generator-deanhtml5 [![Build Status](https://secure.travis-ci.org/chicagogrooves/generator-deanhtml5.png?branch=master)](https://travis-ci.org/chicagogrooves/generator-deanhtml5)
+# generator-deanius-html5 [![Build Status](https://secure.travis-ci.org/chicagogrooves/generator-deanius-html5.png?branch=master)](https://travis-ci.org/chicagogrooves/generator-deanius-html5)
 
 A generator for [Yeoman](http://yeoman.io).
 
@@ -32,17 +32,17 @@ A default generated site gives you:
 
 First we'll assume you've done
 ```
-$ npm install -g generator-deanhtml5
+$ npm install -g generator-deanius-html5
 ```
 
 Or if you're in local development mode, you have a copy of the repo, you may have done:
 ```
-$ cd generator-deanhtml5 && npm link
+$ cd generator-deanius-html5 && npm link
 ```
 
 Either way now that node knows of the generator, you can proceed to 
 ```
-$ mkdir coolapp && cd coolapp && yo deanhtml5
+$ mkdir coolapp && cd coolapp && yo deanius-html5
 ```
 
 Now watch as Yeoman generates, your site, pulls down Node and front-end packages (using locally cached copies if desired), and fires up a browser
@@ -67,16 +67,16 @@ $ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-deanhtml5 from npm, run:
+To install generator-deanius-html5 from npm, run:
 
 ```
-$ npm install -g generator-deanhtml5
+$ npm install -g generator-deanius-html5
 ```
 
 Finally, initiate the generator:
 
 ```
-$ yo deanhtml5
+$ yo deanius-html5
 ```
 
 ### Getting To Know Yeoman
